@@ -1,0 +1,3672 @@
+{
+  "id": 63,
+  "title": "Hosts Nagios (Compare)",
+  "tags": [
+    "snmp",
+    "torrente"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": true,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "350px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "graphitest",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 51,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": true,
+          "renderer": "flot",
+          "repeat": "host",
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalreal, 'memtotal')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "alias(reduceSeries(mapSeries(tronchon.hosts_ae.*.$host.memory.{totalreal,totalfree}, 0), 'diffSeries', 5, 'totalreal', 'totalfree'), 'memused')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(reduceSeries(mapSeries(group(#A, #B), 0), 'asPercent', 0, 'memused', 'memtotal'), 'Raw MEMORY')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(averageSeries(tronchon.hosts_ae.*.$host.processor.*.load), 'Average CPU')"
+            },
+            {
+              "refId": "E",
+              "target": "alias(grep(asPercent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.cpuraw.*)), 'wait'), 'Raw CPU Wait')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Mixed stats on $host",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "graphitest",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 52,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": true,
+          "renderer": "flot",
+          "repeat": null,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalreal, 'memtotal')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "alias(reduceSeries(mapSeries(tronchon.hosts_ae.*.$host.memory.{totalreal,totalfree}, 0), 'diffSeries', 5, 'totalreal', 'totalfree'), 'memused')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(reduceSeries(mapSeries(group(#A, #B), 0), 'asPercent', 0, 'memused', 'memtotal'), 'Raw MEMORY')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(averageSeries(tronchon.hosts_ae.*.$host.processor.*.load), 'Average CPU')"
+            },
+            {
+              "refId": "E",
+              "target": "alias(grep(asPercent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.cpuraw.*)), 'wait'), 'Raw CPU Wait')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Mixed stats on $host",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 51
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "graphitest",
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 83,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": true,
+          "renderer": "flot",
+          "repeat": null,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalreal, 'memtotal')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "alias(reduceSeries(mapSeries(tronchon.hosts_ae.*.$host.memory.{totalreal,totalfree}, 0), 'diffSeries', 5, 'totalreal', 'totalfree'), 'memused')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(reduceSeries(mapSeries(group(#A, #B), 0), 'asPercent', 0, 'memused', 'memtotal'), 'Raw MEMORY')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(averageSeries(tronchon.hosts_ae.*.$host.processor.*.load), 'Average CPU')"
+            },
+            {
+              "refId": "E",
+              "target": "alias(grep(asPercent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.cpuraw.*)), 'wait'), 'Raw CPU Wait')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Mixed stats on $host",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 51
+        }
+      ],
+      "showTitle": true,
+      "title": "MIXED"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 8,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(asPercent(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.cpuraw.*), 99)), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw CPU Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 55,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(asPercent(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.cpuraw.*), 99)), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw CPU Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 8
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 84,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": true,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(asPercent(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.cpuraw.*), 99)), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw CPU Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 8
+        }
+      ],
+      "showTitle": true,
+      "title": "CPU"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 10,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null as zero",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(scale(tronchon.hosts_ae.*.$host.load.*.loadint, 0.01), 9), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Load on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "load",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 58,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null as zero",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(scale(tronchon.hosts_ae.*.$host.load.*.loadint, 0.01), 9), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Load on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "load",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 10
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 85,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null as zero",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(scale(tronchon.hosts_ae.*.$host.load.*.loadint, 0.01), 9), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Load on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "load",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 10
+        }
+      ],
+      "showTitle": true,
+      "title": "LOAD"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 15,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(nonNegativeDerivative(tronchon.hosts_ae.*.$host.ioraw.received), 'Raw IO Received')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(scale(nonNegativeDerivative(tronchon.hosts_ae.*.$host.ioraw.sent), -1), 'Raw IO sent')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw (Kernel) I/O on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "sent / received",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 76,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(nonNegativeDerivative(tronchon.hosts_ae.*.$host.ioraw.received), 'Raw IO Received')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(scale(nonNegativeDerivative(tronchon.hosts_ae.*.$host.ioraw.sent), -1), 'Raw IO sent')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw (Kernel) I/O on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "sent / received",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 15
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 91,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(nonNegativeDerivative(tronchon.hosts_ae.*.$host.ioraw.received), 'Raw IO Received')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(scale(nonNegativeDerivative(tronchon.hosts_ae.*.$host.ioraw.sent), -1), 'Raw IO sent')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw (Kernel) I/O on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "sent / received",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 15
+        }
+      ],
+      "showTitle": true,
+      "title": "KERNEL I/O"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 5,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 24,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.processes.systemnumprocesses, 'Processes')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Processes on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "processes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 5,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 82,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.processes.systemnumprocesses, 'Processes')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Processes on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "processes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 24
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 5,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 93,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.processes.systemnumprocesses, 'Processes')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Processes on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "processes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 24
+        }
+      ],
+      "showTitle": true,
+      "title": "PROCESSES"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.intraw.*), 9), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interrupts On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "number",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 79,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.intraw.*), 9), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interrupts On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "number",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 9
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 92,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.intraw.*), 9), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interrupts On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "number",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 9
+        }
+      ],
+      "showTitle": true,
+      "title": "INTERRUPTS"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 11,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": null,
+            "sortDesc": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalreal, 'total')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(diffSeries(#A, #C), 'used')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.availreal, 'free')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.shared.select metric, 'shared')",
+              "textEditor": true
+            },
+            {
+              "hide": false,
+              "refId": "E",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.buffer, 'buffers')"
+            },
+            {
+              "hide": false,
+              "refId": "F",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.cached, 'cached')"
+            },
+            {
+              "refId": "G",
+              "target": "alias(alias(sumSeries(#C, #E, #F), 'alias'), 'free without buffer/cache')",
+              "textEditor": true
+            },
+            {
+              "refId": "H",
+              "target": "alias(diffSeries(#A, #G), 'used without buffer/cache')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw Memory Usage On $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 61,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": null,
+            "sortDesc": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalreal, 'total')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(diffSeries(#A, #C), 'used')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.availreal, 'free')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.shared.select metric, 'shared')",
+              "textEditor": true
+            },
+            {
+              "hide": false,
+              "refId": "E",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.buffer, 'buffers')"
+            },
+            {
+              "hide": false,
+              "refId": "F",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.cached, 'cached')"
+            },
+            {
+              "refId": "G",
+              "target": "alias(alias(sumSeries(#C, #E, #F), 'alias'), 'free without buffer/cache')",
+              "textEditor": true
+            },
+            {
+              "refId": "H",
+              "target": "alias(diffSeries(#A, #G), 'used without buffer/cache')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw Memory Usage On $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 11
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 86,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": null,
+            "sortDesc": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalreal, 'total')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(diffSeries(#A, #C), 'used')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.availreal, 'free')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.shared.select metric, 'shared')",
+              "textEditor": true
+            },
+            {
+              "hide": false,
+              "refId": "E",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.buffer, 'buffers')"
+            },
+            {
+              "hide": false,
+              "refId": "F",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.cached, 'cached')"
+            },
+            {
+              "refId": "G",
+              "target": "alias(alias(sumSeries(#C, #E, #F), 'alias'), 'free without buffer/cache')",
+              "textEditor": true
+            },
+            {
+              "refId": "H",
+              "target": "alias(diffSeries(#A, #G), 'used without buffer/cache')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Raw Memory Usage On $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 11
+        }
+      ],
+      "showTitle": true,
+      "title": "MEMORY"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 40,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalswap, 'total')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.availswap, 'free')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(diffSeries(#A, #B), 'used')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Swap Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 64,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalswap, 'total')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.availswap, 'free')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(diffSeries(#A, #B), 'used')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Swap Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 40
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 87,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [
+            {}
+          ],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.totalswap, 'total')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(tronchon.hosts_ae.*.$host.memory.availswap, 'free')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(diffSeries(#A, #B), 'used')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Swap Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "kbytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 40
+        }
+      ],
+      "showTitle": true,
+      "title": "SWAP"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "cacheTimeout": "",
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 94,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasByNode(tronchon.hosts_ae.*.$host.storage.fixeddisk.*.size, 6, 7)"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasByNode(tronchon.hosts_ae.*.$host.storage.fixeddisk.*.used, 6, 7)"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "aliasSub(aliasByNode(lowestCurrent(reduceSeries(mapSeries(group(#A, #B), 0), 'asPercent', 1, 'used', 'size'), 999), 0), '_', '/')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Percent Fixed Disk Usage on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "cacheTimeout": "",
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 103,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasByNode(tronchon.hosts_ae.*.$host.storage.fixeddisk.*.size, 6, 7)"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasByNode(tronchon.hosts_ae.*.$host.storage.fixeddisk.*.used, 6, 7)"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "aliasSub(aliasByNode(lowestCurrent(reduceSeries(mapSeries(group(#A, #B), 0), 'asPercent', 1, 'used', 'size'), 999), 0), '_', '/')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Percent Fixed Disk Usage on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 94
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "cacheTimeout": "",
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 104,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasByNode(tronchon.hosts_ae.*.$host.storage.fixeddisk.*.size, 6, 7)"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasByNode(tronchon.hosts_ae.*.$host.storage.fixeddisk.*.used, 6, 7)"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "aliasSub(aliasByNode(lowestCurrent(reduceSeries(mapSeries(group(#A, #B), 0), 'asPercent', 1, 'used', 'size'), 999), 0), '_', '/')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Percent Fixed Disk Usage on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 94
+        }
+      ],
+      "showTitle": true,
+      "title": "FILESYSTEMS"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 7,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(removeBelowValue(scaleToSeconds(nonNegativeDerivative(tronchon.hosts_ae.*.$host.interfaces.*.*.bytes_in, 4294967295), 8), 1), 5, 6), '-', '.'), '$', ' bits IN')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(removeAboveValue(scaleToSeconds(nonNegativeDerivative(tronchon.hosts_ae.*.$host.interfaces.*.*.bytes_out, 4294967295), -8), -1), 5, 6), '-', '.'), '$', ' bits OUT')"
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bits",
+              "label": "bits OUT(tx) / IN(rx)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 67,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(removeBelowValue(scaleToSeconds(nonNegativeDerivative(tronchon.hosts_ae.*.$host.interfaces.*.*.bytes_in, 4294967295), 8), 1), 5, 6), '-', '.'), '$', ' bits IN')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(removeAboveValue(scaleToSeconds(nonNegativeDerivative(tronchon.hosts_ae.*.$host.interfaces.*.*.bytes_out, 4294967295), -8), -1), 5, 6), '-', '.'), '$', ' bits OUT')"
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bits",
+              "label": "bits OUT(tx) / IN(rx)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 7
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 88,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(removeBelowValue(scaleToSeconds(nonNegativeDerivative(tronchon.hosts_ae.*.$host.interfaces.*.*.bytes_in, 4294967295), 8), 1), 5, 6), '-', '.'), '$', ' bits IN')",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(removeAboveValue(scaleToSeconds(nonNegativeDerivative(tronchon.hosts_ae.*.$host.interfaces.*.*.bytes_out, 4294967295), -8), -1), 5, 6), '-', '.'), '$', ' bits OUT')"
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bits",
+              "label": "bits OUT(tx) / IN(rx)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 7
+        }
+      ],
+      "showTitle": true,
+      "title": "NETWORK"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 14,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.tcp.*), 99), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "TCP Stats on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "number",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 70,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.tcp.*), 99), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "TCP Stats on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "number",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 14
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 89,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.tcp.*), 99), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "TCP Stats on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "number",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 14
+        }
+      ],
+      "showTitle": true,
+      "title": "TCP"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 23,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": "host",
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "cuba",
+              "value": "cuba",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasSub(aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.udp.*), 99), 5), 'udp', '')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "UDP Stats on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "datagrams",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 73,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "estatsunits",
+              "value": "estatsunits",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasSub(aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.udp.*), 99), 5), 'udp', '')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "UDP Stats on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "datagrams",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 23
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": "graphitest",
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "id": 90,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "minSpan": 3,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "repeat": null,
+          "resolution": 100,
+          "scale": 1,
+          "scopedVars": {
+            "host": {
+              "text": "irlanda",
+              "value": "irlanda",
+              "selected": true
+            }
+          },
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasSub(aliasByNode(lowestCurrent(nonNegativeDerivative(tronchon.hosts_ae.*.$host.udp.*), 99), 5), 'udp', '')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "UDP Stats on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "datagrams",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true,
+          "repeatIteration": 1477379971327,
+          "repeatPanelId": 23
+        }
+      ],
+      "showTitle": true,
+      "title": "UDP"
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now-1m"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "nowDelay": "1m",
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "enable": true,
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "value": [
+            "cuba",
+            "estatsunits",
+            "irlanda"
+          ],
+          "text": "cuba + estatsunits + irlanda"
+        },
+        "datasource": "graphitest",
+        "hide": 0,
+        "hideLabel": false,
+        "includeAll": false,
+        "label": "",
+        "multi": true,
+        "multiFormat": "glob",
+        "name": "host",
+        "options": [],
+        "query": "tronchon.hosts_ae.*.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "tagValuesQuery": "tronchon.hosts_ae.$tag.*",
+        "tags": [],
+        "tagsQuery": "tronchon.hosts_ae.*",
+        "type": "query",
+        "useTags": true
+      }
+    ]
+  },
+  "annotations": {
+    "enable": true,
+    "list": []
+  },
+  "refresh": "1m",
+  "schemaVersion": 12,
+  "version": 1,
+  "links": [],
+  "gnetId": null
+}

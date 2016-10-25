@@ -1,0 +1,1620 @@
+{
+  "id": 49,
+  "title": "Coms Nagios",
+  "tags": [
+    "snmp",
+    "torrente"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "100px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(71, 212, 59, 0.4)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "bits",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 10,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "sumSeries(scaleToSeconds(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.bytes_in), 8))"
+            }
+          ],
+          "thresholds": "100000000,1000000000",
+          "title": "Current IN Throughout",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(71, 212, 59, 0.4)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "bits",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 11,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "sumSeries(scaleToSeconds(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.bytes_out), 8))"
+            }
+          ],
+          "thresholds": "100000000,1000000000",
+          "title": "Current OUT Throughout",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(71, 212, 59, 0.4)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "bits",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 12,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "sumSeries(scaleToSeconds(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.bytes_in), 8))"
+            }
+          ],
+          "thresholds": "100000000,1000000000",
+          "title": "Max IN Throughout",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "max",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(71, 212, 59, 0.4)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "bits",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 13,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "sumSeries(scaleToSeconds(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.bytes_out), 8))"
+            }
+          ],
+          "thresholds": "100000000,1000000000",
+          "title": "Max OUT Throughout",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "max",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(71, 212, 59, 0.4)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 16,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "scaleToSeconds(nonNegativeDerivative(sumSeries(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.{drops_in,drops_out})), 1)"
+            }
+          ],
+          "thresholds": "100,1001",
+          "title": "Total Discards",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "total",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(71, 212, 59, 0.4)",
+            "rgba(245, 150, 40, 0.73)",
+            "rgba(225, 40, 40, 0.59)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 17,
+          "interval": null,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "scaleToSeconds(nonNegativeDerivative(sumSeries(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.{errors_in,errors_out})), 1)"
+            }
+          ],
+          "thresholds": "100,1001",
+          "title": "Total Errors",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "total",
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "rangeMaps": [
+            {
+              "from": "null",
+              "to": "null",
+              "text": "N/A"
+            }
+          ],
+          "mappingType": 1
+        }
+      ],
+      "showTitle": true,
+      "title": "Resume"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "600px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.bytes_in),0), $interface_number), 8), 6,7,8), '\\.', ' | '), 'bytes_', 'bits ')",
+              "textEditor": true
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.bytes_out),0), $interface_number), -8), 6,7,8), '\\.', ' | '), 'bytes_', 'bits ')",
+              "textEditor": true
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Top $interface_number interface $filter Traffic on [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bits",
+              "label": "out / in (bps)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "L2 Traffic"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 21,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.ucast_in),0), $interface_number), 1), 6,7,8), '\\.', ' | ')",
+              "textEditor": true
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.ucast_out),0), $interface_number), -1), 6,7,8), '\\.', ' | ')",
+              "textEditor": true
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Top $interface_number interface $filter Unicast packets on [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "pps",
+              "label": "out / in (pps)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "none",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "L2 Unicast Packets"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 22,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.bcast_in),0), $interface_number), 1), 6,7,8), '\\.', ' | '), 'bytes_', 'bits ')",
+              "textEditor": true
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.bcast_out),0), $interface_number), -1), 6,7,8), '\\.', ' | '), 'bytes_', 'bits ')",
+              "textEditor": true
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Top $interface_number interface $filter Broadcastcast packets on [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "pps",
+              "label": "out / in (pps)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "none",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "L2 Broadcast Packets"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 23,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.mcast_in),0), $interface_number), 1), 6,7,8), '\\.', ' | '), 'bytes_', 'bits ')",
+              "textEditor": true
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(scaleToSeconds($filter(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.$interfaces.*.mcast_out),0), $interface_number), -1), 6,7,8), '\\.', ' | '), 'bytes_', 'bits ')",
+              "textEditor": true
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Top $interface_number interface $filter Multicast packets on [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "pps",
+              "label": "out / in (pps)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "none",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "L2 Multicast Packets"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 7,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "sort": "total",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasByNode(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.drops_in), 0), 6, 7, 8), '\\.', ' | ')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasByNode(scale(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.drops_out), 0), -1), 6,7, 8), '\\.', ' | ')"
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface DROPS On [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "out / in (drops)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 8,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "total",
+            "sortDesc": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasByNode(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.errors_in), 0), 6,7, 8), '\\.', ' | ')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasByNode(scale(maximumAbove(nonNegativeDerivative(torrente.coms.$entorno.$fabricante.$host.interfaces.*.*.errors_out), 0), -1), 6, 7, 8), '\\.', ' | ')"
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Interface ERRORS On [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "out / in (errors)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "L2 Anomalies"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {
+            "Cisco CPU": "#447EBC"
+          },
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(torrente.coms.$entorno.$fabricante.$host.cpu.netscreen, 6)",
+              "textEditor": true
+            },
+            {
+              "refId": "B",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.1.enterasys, 'Enterasys CPU')",
+              "textEditor": true
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(torrente.coms.$entorno.$fabricante.$host.cpu.0.0.*, 8)",
+              "textEditor": true
+            },
+            {
+              "refId": "D",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.1.cisco, 'Cisco CPU')",
+              "textEditor": true
+            },
+            {
+              "refId": "E",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.ipso, 'IPSO CPU')",
+              "textEditor": true
+            },
+            {
+              "refId": "F",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.fujitsu, 'Fujitsu CPU')",
+              "textEditor": true
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(torrente.coms.$entorno.$fabricante.$host.cpu.*.*.ers, 5, 6)",
+              "textEditor": true
+            },
+            {
+              "refId": "H",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.1.vsp, 'VSP Cpu')",
+              "textEditor": true
+            },
+            {
+              "refId": "I",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.a10, 'A10 Cpu')",
+              "textEditor": true
+            },
+            {
+              "refId": "J",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.cpu.*.palo_alto, 'Cpu')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU Usage On [$host] from $entorno ($fabricante)",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "System"
+    },
+    {
+      "collapse": true,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "graphitest",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 14,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.stats.smtp_time, 'Tables')",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(constantLine(60000), '1 minute')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "SNMP Polling Response Time",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "Cisco CPU": "#447EBC",
+            "SNMP Error": "#890F02"
+          },
+          "annotate": {
+            "enable": false
+          },
+          "bars": true,
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "fill": 3,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "height": "",
+          "id": 15,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null as zero",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(torrente.coms.$entorno.$fabricante.$host.stats.error.select metric, 'SNMP Error')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "SNMP Error",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "0 = OK / 1 = KO",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "bytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "showTitle": true,
+      "title": "SNMP"
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "enable": true,
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "coms_castelldefels",
+          "value": "coms_castelldefels"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "entorno",
+        "options": [],
+        "query": "torrente.coms.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "screenos",
+          "value": "screenos"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "fabricante",
+        "options": [],
+        "query": "torrente.coms.$entorno.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "fw3",
+          "value": "fw3"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "host",
+        "options": [],
+        "query": "torrente.coms.$entorno.$fabricante.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "type": "query"
+      },
+      {
+        "allValue": "*",
+        "current": {
+          "text": "$__all",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": true,
+        "multi": true,
+        "name": "interfaces",
+        "options": [],
+        "query": "torrente.coms.$entorno.$fabricante.$host.interfaces.*",
+        "refresh": 0,
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "tags": [],
+          "text": "highestCurrent",
+          "value": "highestCurrent"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "filter",
+        "options": [],
+        "query": "highestCurrent,highestAverage,highestMax,lowestCurrent,lowestAverage",
+        "refresh": 0,
+        "refresh_on_load": false,
+        "type": "custom"
+      },
+      {
+        "allFormat": "glob",
+        "auto": false,
+        "current": {
+          "tags": [],
+          "text": "3",
+          "value": "3"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "interface_number",
+        "options": [
+          {
+            "selected": true,
+            "text": "3",
+            "value": "3"
+          },
+          {
+            "selected": false,
+            "text": "1",
+            "value": "1"
+          },
+          {
+            "selected": false,
+            "text": "2",
+            "value": "2"
+          },
+          {
+            "selected": false,
+            "text": "3",
+            "value": "3"
+          },
+          {
+            "selected": false,
+            "text": "4",
+            "value": "4"
+          },
+          {
+            "selected": false,
+            "text": "5",
+            "value": "5"
+          },
+          {
+            "selected": false,
+            "text": "10",
+            "value": "10"
+          },
+          {
+            "selected": false,
+            "text": "15",
+            "value": "15"
+          },
+          {
+            "selected": false,
+            "text": "25",
+            "value": "25"
+          },
+          {
+            "selected": false,
+            "text": "100",
+            "value": "100"
+          },
+          {
+            "selected": false,
+            "text": "999",
+            "value": "999"
+          }
+        ],
+        "query": "3,1,2,3,4,5,10,15,25,100,999",
+        "refresh": 0,
+        "refresh_on_load": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "annotations": {
+    "enable": false,
+    "list": []
+  },
+  "refresh": "1m",
+  "schemaVersion": 12,
+  "version": 36,
+  "links": [],
+  "gnetId": null
+}

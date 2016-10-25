@@ -1,0 +1,306 @@
+{
+  "id": 51,
+  "title": "Hosts Nagios (Stats)",
+  "tags": [
+    "snmp",
+    "torrente"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": true,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "graphitest",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 42,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(highestCurrent(tronchon.hosts_ae.*.*.stats.payload_size, 10), 2, 3)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Top 10 Carbon Payload",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "bytes",
+              "label": "bytes/s"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "graphitest",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 34,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(highestCurrent(tronchon.hosts_ae.*.*.stats.smtp_time, 10), 2, 3)"
+            },
+            {
+              "refId": "B",
+              "target": "alias(constantLine(60000), '1 minute')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Top 10 Highest SNMP Polling Respons Time",
+          "tooltip": {
+            "shared": true,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "ms"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        },
+        {
+          "aliasColors": {
+            "SNMP Errors": "#890F02"
+          },
+          "bars": true,
+          "datasource": "graphitest",
+          "decimals": 0,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 35,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "null as zero",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(tronchon.hosts_ae.*.*.stats.error, 3)",
+              "textEditor": false
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "SNMP Errors",
+          "tooltip": {
+            "shared": false,
+            "value_type": "individual",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "none",
+              "label": "failing hosts"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        }
+      ],
+      "showTitle": true,
+      "title": "SNMP"
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now-1m"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "nowDelay": "1m",
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "enable": true,
+    "list": []
+  },
+  "annotations": {
+    "enable": true,
+    "list": []
+  },
+  "refresh": "1m",
+  "schemaVersion": 12,
+  "version": 3,
+  "links": [],
+  "gnetId": null
+}

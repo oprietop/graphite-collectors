@@ -1,0 +1,745 @@
+{
+  "id": 23,
+  "title": "Windows",
+  "tags": [
+    "snmp",
+    "torrente"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {
+            "cpu_all": "#7EB26D"
+          },
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 5,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 1,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(torrente.windows.$host.cpu_all, 3)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Average CPU Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "percent",
+              "label": "percent"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(sortByMaxima(sortByMinima(torrente.windows.$host.cpu_[0-9]*)), 3)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Combined CPU Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "percent",
+              "label": "percent"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        }
+      ],
+      "title": ""
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(torrente.windows.$host.disk_physical_memory_percent, 'Physical Memory')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(torrente.windows.$host.disk_virtual_memory_percent, 'Virtual Memory')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Percent memory usage on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "percent",
+              "label": "percent"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 7,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(torrente.windows.$host.disk_physical_memory_used, 'Memory Used')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(torrente.windows.$host.disk_physical_memory_size, 'Memory Size')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Physical memory Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "bytes",
+              "label": "bytes"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        }
+      ],
+      "title": ""
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(sortByMaxima(torrente.windows.$host.disk_[a-z]_*_percent), 3)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Percent disk usage on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "percent",
+              "label": "percent"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(sortByMaxima(torrente.windows.$host.disk_[a-z]_*_used), 3)"
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(sortByMaxima(torrente.windows.$host.disk_[a-z]_*_size), 3)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk Usage on $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "bytes",
+              "label": "bytes"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        }
+      ],
+      "title": ""
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 8,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "aliasSub(aliasSub(aliasByNode(sortByMaxima(scaleToSeconds(nonNegativeDerivative(torrente.windows.$host.*_ifentryinoctets), 8)), 3), 'ifentryinoctets', 'bits IN'), '_', ' | ')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasSub(aliasSub(aliasByNode(sortByMaxima(scaleToSeconds(nonNegativeDerivative(torrente.windows.$host.*_ifentryoutoctets), -8)), 3), 'ifentryoutoctets', 'bits OUT'), '_', ' | ')"
+            },
+            {
+              "refId": "C",
+              "target": "group(#A, #B)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network Usage On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "bits",
+              "label": "in /out (bps)"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 5,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 9,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(torrente.windows.$host.system_processes, 'Processes')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total Running Processes On $host",
+          "tooltip": {
+            "query_as_alias": true,
+            "shared": false,
+            "value_type": "cumulative",
+            "sort": 0,
+            "msResolution": false
+          },
+          "type": "graph",
+          "zerofill": true,
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short",
+              "label": ""
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
+          "xaxis": {
+            "show": true
+          }
+        }
+      ],
+      "title": ""
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "enable": true,
+    "list": []
+  },
+  "annotations": {
+    "enable": false,
+    "list": []
+  },
+  "refresh": "1m",
+  "schemaVersion": 12,
+  "version": 3,
+  "links": [],
+  "gnetId": null
+}

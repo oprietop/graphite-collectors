@@ -1,0 +1,1287 @@
+{
+  "id": 24,
+  "title": "Xen",
+  "tags": [
+    "AnyEvent",
+    "torrente",
+    "http"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "100px",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 7,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "averageSeries(asPercent(torrente.xen.vms.$entorno.$host.cpu*, 1))",
+              "textEditor": true
+            }
+          ],
+          "thresholds": "",
+          "title": "Current CPU usage",
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 8,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "torrente.xen.vms.$entorno.$host.memory",
+              "textEditor": true
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "scale(torrente.xen.vms.$entorno.$host.memory_internal_free, 1024)",
+              "textEditor": true
+            },
+            {
+              "hide": true,
+              "refId": "C",
+              "target": "scale(diffSeries(#A, #B), 100)"
+            },
+            {
+              "refId": "D",
+              "target": "divideSeries(#C, #A)"
+            }
+          ],
+          "thresholds": "50,90",
+          "title": "Current Used Memory",
+          "type": "singlestat",
+          "valueFontSize": "100%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "bps",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 9,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "20%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "highestCurrent(scale(torrente.xen.vms.$entorno.$host.vif_*, 8), 1)",
+              "textEditor": true
+            }
+          ],
+          "thresholds": "",
+          "title": "Current Max Network Throughput",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "bytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 10,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "targets": [
+            {
+              "refId": "A",
+              "target": "highestCurrent(torrente.xen.vms.$entorno.$host.vbd_*, 1)",
+              "textEditor": true
+            }
+          ],
+          "thresholds": "",
+          "title": "Current Max Disk Throughput",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "300px",
+      "panels": [
+        {
+          "aliasColors": {
+            "All": "#FCE2DE",
+            "Average": "#F9E2D2"
+          },
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 0,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 2,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [
+            {
+              "alias": "Average",
+              "fill": 1,
+              "linewidth": 3,
+              "pointradius": 3,
+              "yaxis": 1
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(sortByMinima(groupByNode(asPercent(torrente.xen.vms.$entorno.$host.cpu*, 1), 5, 'sumSeries')), 0)"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(averageSeries(asPercent(torrente.xen.vms.$entorno.$host.cpu*, 1)), 'Average')",
+              "textEditor": true
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Combined CPU usage on $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {
+            "memory": "#5195CE",
+            "memory_internal_free": "#7EB26D",
+            "memory_target": "#EAB839"
+          },
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 5,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [
+            {
+              "alias": "memory_internal_free",
+              "fill": 5
+            }
+          ],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(torrente.xen.vms.$entorno.$host.memory, 'Total')",
+              "textEditor": true
+            },
+            {
+              "refId": "B",
+              "target": "alias(scale(torrente.xen.vms.$entorno.$host.memory_internal_free, 1024), 'Free')",
+              "textEditor": true
+            },
+            {
+              "refId": "C",
+              "target": "alias(diffSeries(#A, #B), 'Used')"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory usage on $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "bytes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "percent",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "scale(torrente.xen.vms.$entorno.$host.vif_*_rx, 8)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "scale(torrente.xen.vms.$entorno.$host.vif_*_tx, -8)"
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(sortByMaxima(group(#A, #B)), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Network usage on $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bits",
+              "label": "tx /rx (bps)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        },
+        {
+          "aliasColors": {},
+          "annotate": {
+            "enable": false
+          },
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "resolution": 100,
+          "scale": 1,
+          "seriesOverrides": [],
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "torrente.xen.vms.$entorno.$host.vbd_*_read"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "scale(torrente.xen.vms.$entorno.$host.vbd_*_write, -1)"
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(sortByMaxima(group(#A, #B)), 5)"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Disk I/O on $host",
+          "tooltip": {
+            "msResolution": false,
+            "query_as_alias": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": "write / read (Bps)",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "zerofill": true
+        }
+      ],
+      "title": "New row"
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {
+    "collapse": false,
+    "enable": true,
+    "notice": false,
+    "now": true,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "status": "Stable",
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "type": "timepicker"
+  },
+  "templating": {
+    "enable": true,
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "xenbox_pro_cast02",
+          "value": "xenbox_pro_cast02"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "entorno",
+        "options": [
+          {
+            "text": "pool_unico",
+            "value": "pool_unico",
+            "selected": false
+          },
+          {
+            "text": "xen_22arroba",
+            "value": "xen_22arroba",
+            "selected": false
+          },
+          {
+            "text": "xenbox_pre",
+            "value": "xenbox_pre",
+            "selected": false
+          },
+          {
+            "text": "xenbox_pro",
+            "value": "xenbox_pro",
+            "selected": false
+          },
+          {
+            "text": "xenbox_pro_cast02",
+            "value": "xenbox_pro_cast02",
+            "selected": true
+          },
+          {
+            "text": "xenbox_test",
+            "value": "xenbox_test",
+            "selected": false
+          },
+          {
+            "text": "xenbox_virtua",
+            "value": "xenbox_virtua",
+            "selected": false
+          }
+        ],
+        "query": "torrente.xen.vms.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "type": "query"
+      },
+      {
+        "allFormat": "glob",
+        "current": {
+          "text": "doctor4_no_apagar",
+          "value": "doctor4_no_apagar"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "name": "host",
+        "options": [
+          {
+            "text": "albesa",
+            "value": "albesa",
+            "selected": false
+          },
+          {
+            "text": "albiol",
+            "value": "albiol",
+            "selected": false
+          },
+          {
+            "text": "alcano",
+            "value": "alcano",
+            "selected": false
+          },
+          {
+            "text": "arenys",
+            "value": "arenys",
+            "selected": false
+          },
+          {
+            "text": "berga",
+            "value": "berga",
+            "selected": false
+          },
+          {
+            "text": "bonastre",
+            "value": "bonastre",
+            "selected": false
+          },
+          {
+            "text": "capdella",
+            "value": "capdella",
+            "selected": false
+          },
+          {
+            "text": "capilla",
+            "value": "capilla",
+            "selected": false
+          },
+          {
+            "text": "chaman4",
+            "value": "chaman4",
+            "selected": false
+          },
+          {
+            "text": "checkpoint",
+            "value": "checkpoint",
+            "selected": false
+          },
+          {
+            "text": "clera",
+            "value": "clera",
+            "selected": false
+          },
+          {
+            "text": "copons",
+            "value": "copons",
+            "selected": false
+          },
+          {
+            "text": "doctor4_no_apagar",
+            "value": "doctor4_no_apagar",
+            "selected": true
+          },
+          {
+            "text": "enveig",
+            "value": "enveig",
+            "selected": false
+          },
+          {
+            "text": "eslovenia",
+            "value": "eslovenia",
+            "selected": false
+          },
+          {
+            "text": "fenulls",
+            "value": "fenulls",
+            "selected": false
+          },
+          {
+            "text": "gaia",
+            "value": "gaia",
+            "selected": false
+          },
+          {
+            "text": "gambia",
+            "value": "gambia",
+            "selected": false
+          },
+          {
+            "text": "godall",
+            "value": "godall",
+            "selected": false
+          },
+          {
+            "text": "inagua",
+            "value": "inagua",
+            "selected": false
+          },
+          {
+            "text": "isovol",
+            "value": "isovol",
+            "selected": false
+          },
+          {
+            "text": "jujols",
+            "value": "jujols",
+            "selected": false
+          },
+          {
+            "text": "ladonia",
+            "value": "ladonia",
+            "selected": false
+          },
+          {
+            "text": "latorreta",
+            "value": "latorreta",
+            "selected": false
+          },
+          {
+            "text": "letonia",
+            "value": "letonia",
+            "selected": false
+          },
+          {
+            "text": "luxemburg",
+            "value": "luxemburg",
+            "selected": false
+          },
+          {
+            "text": "malgrat",
+            "value": "malgrat",
+            "selected": false
+          },
+          {
+            "text": "manipur",
+            "value": "manipur",
+            "selected": false
+          },
+          {
+            "text": "manresa",
+            "value": "manresa",
+            "selected": false
+          },
+          {
+            "text": "masquefa",
+            "value": "masquefa",
+            "selected": false
+          },
+          {
+            "text": "meghalaya",
+            "value": "meghalaya",
+            "selected": false
+          },
+          {
+            "text": "montgat",
+            "value": "montgat",
+            "selected": false
+          },
+          {
+            "text": "montornes",
+            "value": "montornes",
+            "selected": false
+          },
+          {
+            "text": "nagaland",
+            "value": "nagaland",
+            "selected": false
+          },
+          {
+            "text": "nankin",
+            "value": "nankin",
+            "selected": false
+          },
+          {
+            "text": "nepal",
+            "value": "nepal",
+            "selected": false
+          },
+          {
+            "text": "netdisco",
+            "value": "netdisco",
+            "selected": false
+          },
+          {
+            "text": "nouviladamat",
+            "value": "nouviladamat",
+            "selected": false
+          },
+          {
+            "text": "nyer",
+            "value": "nyer",
+            "selected": false
+          },
+          {
+            "text": "oceja",
+            "value": "oceja",
+            "selected": false
+          },
+          {
+            "text": "olivella",
+            "value": "olivella",
+            "selected": false
+          },
+          {
+            "text": "opol",
+            "value": "opol",
+            "selected": false
+          },
+          {
+            "text": "orpi",
+            "value": "orpi",
+            "selected": false
+          },
+          {
+            "text": "osor",
+            "value": "osor",
+            "selected": false
+          },
+          {
+            "text": "parets",
+            "value": "parets",
+            "selected": false
+          },
+          {
+            "text": "parlava",
+            "value": "parlava",
+            "selected": false
+          },
+          {
+            "text": "piera",
+            "value": "piera",
+            "selected": false
+          },
+          {
+            "text": "pineda",
+            "value": "pineda",
+            "selected": false
+          },
+          {
+            "text": "pontons",
+            "value": "pontons",
+            "selected": false
+          },
+          {
+            "text": "porta",
+            "value": "porta",
+            "selected": false
+          },
+          {
+            "text": "portugal",
+            "value": "portugal",
+            "selected": false
+          },
+          {
+            "text": "riad",
+            "value": "riad",
+            "selected": false
+          },
+          {
+            "text": "robot_no_apagar",
+            "value": "robot_no_apagar",
+            "selected": false
+          },
+          {
+            "text": "roma",
+            "value": "roma",
+            "selected": false
+          },
+          {
+            "text": "rupia",
+            "value": "rupia",
+            "selected": false
+          },
+          {
+            "text": "sallent",
+            "value": "sallent",
+            "selected": false
+          },
+          {
+            "text": "sanauja",
+            "value": "sanauja",
+            "selected": false
+          },
+          {
+            "text": "sankitts",
+            "value": "sankitts",
+            "selected": false
+          },
+          {
+            "text": "santasusana",
+            "value": "santasusana",
+            "selected": false
+          },
+          {
+            "text": "santboi",
+            "value": "santboi",
+            "selected": false
+          },
+          {
+            "text": "santfruitos",
+            "value": "santfruitos",
+            "selected": false
+          },
+          {
+            "text": "santvicent",
+            "value": "santvicent",
+            "selected": false
+          },
+          {
+            "text": "sealand",
+            "value": "sealand",
+            "selected": false
+          },
+          {
+            "text": "stroncone",
+            "value": "stroncone",
+            "selected": false
+          },
+          {
+            "text": "sunyer",
+            "value": "sunyer",
+            "selected": false
+          },
+          {
+            "text": "susqueda",
+            "value": "susqueda",
+            "selected": false
+          },
+          {
+            "text": "talavera",
+            "value": "talavera",
+            "selected": false
+          },
+          {
+            "text": "tarres",
+            "value": "tarres",
+            "selected": false
+          },
+          {
+            "text": "termine",
+            "value": "termine",
+            "selected": false
+          },
+          {
+            "text": "tibet_contingencia_no_apagar",
+            "value": "tibet_contingencia_no_apagar",
+            "selected": false
+          },
+          {
+            "text": "tordera",
+            "value": "tordera",
+            "selected": false
+          },
+          {
+            "text": "torello",
+            "value": "torello",
+            "selected": false
+          },
+          {
+            "text": "torrente",
+            "value": "torrente",
+            "selected": false
+          },
+          {
+            "text": "tossa",
+            "value": "tossa",
+            "selected": false
+          },
+          {
+            "text": "trullars",
+            "value": "trullars",
+            "selected": false
+          },
+          {
+            "text": "ultramort",
+            "value": "ultramort",
+            "selected": false
+          },
+          {
+            "text": "uoc-blat",
+            "value": "uoc-blat",
+            "selected": false
+          },
+          {
+            "text": "uoc-borratja",
+            "value": "uoc-borratja",
+            "selected": false
+          },
+          {
+            "text": "uoc-fullderoure",
+            "value": "uoc-fullderoure",
+            "selected": false
+          },
+          {
+            "text": "uoc-kiwi-contingencia",
+            "value": "uoc-kiwi-contingencia",
+            "selected": false
+          },
+          {
+            "text": "uoc-maduixa",
+            "value": "uoc-maduixa",
+            "selected": false
+          },
+          {
+            "text": "uoc-maduixot",
+            "value": "uoc-maduixot",
+            "selected": false
+          },
+          {
+            "text": "uoc-melo",
+            "value": "uoc-melo",
+            "selected": false
+          },
+          {
+            "text": "viladamat",
+            "value": "viladamat",
+            "selected": false
+          },
+          {
+            "text": "vilafranca",
+            "value": "vilafranca",
+            "selected": false
+          },
+          {
+            "text": "vilaro",
+            "value": "vilaro",
+            "selected": false
+          },
+          {
+            "text": "vilassar",
+            "value": "vilassar",
+            "selected": false
+          },
+          {
+            "text": "xerta",
+            "value": "xerta",
+            "selected": false
+          }
+        ],
+        "query": "torrente.xen.vms.$entorno.*",
+        "refresh": 1,
+        "refresh_on_load": false,
+        "regex": "",
+        "type": "query"
+      }
+    ]
+  },
+  "annotations": {
+    "enable": false,
+    "list": []
+  },
+  "refresh": "1m",
+  "schemaVersion": 12,
+  "version": 8,
+  "links": [],
+  "gnetId": null
+}
